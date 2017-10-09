@@ -48,6 +48,11 @@ explanation: {{ explanation }}
 
 + Request {{ description }}{{# request_content_type }} ({{ request_content_type }}){{/ request_content_type }}
 {{/ has_request? }}
+{{# curl }}
+
+    ##### cURL
+      <pre>{{ curl }}</pre>
+{{/ curl }}
 {{# request_headers_text }}
 
     + Headers

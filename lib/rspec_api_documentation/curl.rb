@@ -12,27 +12,27 @@ module RspecApiDocumentation
     end
 
     def post
-      "curl \"#{url}\" #{post_data} -X POST #{headers}"
+      "curl \"#{url}\" #{post_data} \\\n\t-X POST #{headers}"
     end
 
     def get
-      "curl -g \"#{url}#{get_data}\" -X GET #{headers}"
+      "curl -g \"#{url}#{get_data}\" \\\n\t-X GET #{headers}"
     end
 
     def head
-      "curl \"#{url}#{get_data}\" -X HEAD #{headers}"
+      "curl \"#{url}#{get_data}\" \\\n\t-X HEAD #{headers}"
     end
 
     def put
-      "curl \"#{url}\" #{post_data} -X PUT #{headers}"
+      "curl \"#{url}\" #{post_data} \\\n\t-X PUT #{headers}"
     end
 
     def delete
-      "curl \"#{url}\" #{post_data} -X DELETE #{headers}"
+      "curl \"#{url}\" #{post_data} \\\n\t-X DELETE #{headers}"
     end
 
     def patch
-      "curl \"#{url}\" #{post_data} -X PATCH #{headers}"
+      "curl \"#{url}\" #{post_data} \\\n\t-X PATCH #{headers}"
     end
 
     def url
@@ -55,7 +55,7 @@ module RspecApiDocumentation
 
     def post_data
       escaped_data = data.to_s.gsub("'", "\\u0027")
-      "-d '#{escaped_data}'"
+      "\\\n\t-d '#{escaped_data}'"
     end
 
     private
