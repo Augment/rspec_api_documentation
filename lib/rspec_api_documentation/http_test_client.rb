@@ -45,6 +45,10 @@ module RspecApiDocumentation
       last_response.status
     end
 
+    def response
+      last_response
+    end
+
     def response_body
       last_response.body
     end

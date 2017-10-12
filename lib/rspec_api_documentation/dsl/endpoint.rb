@@ -11,7 +11,7 @@ module RspecApiDocumentation::DSL
 
     URL_PARAMS_REGEX = /[:\{](\w+)\}?/.freeze
 
-    delegate :response_headers, :response_status, :response_body, :to => :rspec_api_documentation_client
+    delegate :response, :response_headers, :response_status, :response_body, :to => :rspec_api_documentation_client
 
     module ClassMethods
       def example_request(description, params = {}, &block)
